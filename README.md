@@ -59,7 +59,7 @@ python test_flaskr.py`
 Errors are returned as JSON objects in the following formate:
 
 
-   `{
+    `{
       "success" : False,
       
       "error" : 404,
