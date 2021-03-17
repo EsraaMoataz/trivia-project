@@ -23,7 +23,9 @@ From the backend folder run pip install `requirements.txt`. All required package
 To run the server, execute:
 
 `export FLASK_APP=flaskr
+
  export FLASK_ENV=development
+ 
  flask run`
  
  The application is run on  `http://127.0.0.1:5000/`by default that is the localhost.
@@ -31,16 +33,21 @@ To run the server, execute:
 The ./frontend directory contains a complete React frontend to consume the data from the Flask server. 
 
 From the frontend folder run the following commands to start the client:
+
 `npm install //only once to install dependencies
-npm start`
+
+ npm start`
 
 By default, the frontend run on localhost `http://localhost:3000` 
 ## Testing
 In order to run tests navigate to the backend folder and run the following conmmands:
 `
 dropdb trivia_test
+
 createdb trivia_test
+
 psql trivia_test < trivia.psql
+
 python test_flaskr.py`
 
 ## API References
@@ -48,4 +55,20 @@ python test_flaskr.py`
 . Base URL:This application can only be run locally and is not hosted as a base URL.The backend app is hosted as the default `http://127.0.0.1:5000/` .
 
 . Authentication:This version of application doen't require authentication for API keys.
+### Error Handling
+Errors are returned as JSON objects in the following formate:
+
+   `{
+      'success' : False,
+      'error' : 404,
+      'message': 'Not Found'
+    }`
+ 
+This API uses 3 types of error types when requests fail:
+
+- 404: Bad Request
+- 422: Unprocessable
+- 405: Method not allowed
+
+###
 ## Authors
