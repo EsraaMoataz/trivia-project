@@ -21,6 +21,7 @@ The ./backend directory contains a partially completed Flask and SQLAlchemy serv
 From the backend folder run pip install `requirements.txt`. All required package included in requirements file.
 
 To run the server, execute:
+
 `export FLASK_APP=flaskr
  export FLASK_ENV=development
  flask run`
