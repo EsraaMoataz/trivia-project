@@ -52,9 +52,9 @@ python test_flaskr.py`
 
 ## API References
 ### Getting Started
-. Base URL:This application can only be run locally and is not hosted as a base URL.The backend app is hosted as the default `http://127.0.0.1:5000/` .
+- Base URL:This application can only be run locally and is not hosted as a base URL.The backend app is hosted as the default `http://127.0.0.1:5000/` .
 
-. Authentication:This version of application doen't require authentication for API keys.
+- Authentication:This version of application doen't require authentication for API keys.
 ### Error Handling
 Errors are returned as JSON objects in the following formate:
 
