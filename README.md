@@ -60,11 +60,11 @@ Errors are returned as JSON objects in the following formate:
 
 
    `{
-      'success' : False,
+      "success" : False,
       
-      'error' : 404,
+      "error" : 404,
       
-      'message': 'Not Found'
+      "message": "Not Found"
     }`
     
  
