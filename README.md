@@ -58,6 +58,7 @@ python test_flaskr.py`
 ### Error Handling
 Errors are returned as JSON objects in the following formate:
 
+
    `{
       'success' : False,
       
@@ -65,6 +66,7 @@ Errors are returned as JSON objects in the following formate:
       
       'message': 'Not Found'
     }`
+    
  
 This API uses 3 types of error types when requests fail:
 
