@@ -75,13 +75,36 @@ This API uses 3 types of error types when requests fail:
 - 405: Method not allowed
 
 ### EndPoints
-#### GET/
+#### GET/questions
+##### - General:
+
+##### - Sample:
+
+
 #### GET/categories
+##### - General:
+
+##### - Sample:
 #### DELETE/<int:question_id>
+##### - General:
+
+##### - Sample:
 #### POST/questions
+##### - General:
+
+##### - Sample:
 #### POST/search
+##### - General:
+
+##### - Sample:
 #### GET/categories/<int:catagory_id>/questions
+##### - General:
+
+##### - Sample:
 #### GET/quiz/<int:category_id>/<int:question_id>
+##### - General:
+
+##### - Sample:
 
 ###
 ## Authors
