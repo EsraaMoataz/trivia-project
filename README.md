@@ -249,14 +249,38 @@ This API uses 3 types of error types when requests fail:
     
     "total_questions": 18
     
-}`
+   }`
 
 #### GET/categories
 ##### - General:
+###### Return all categories ,success
+##### - Sample: `curl http://127.0.0.1:5000/categories`
 
-##### - Sample:
+`
+{
+
+    "categories": {
+    
+        "1": "Science",
+        
+        "2": "Art",
+        
+        "3": "Geography",
+        
+        "4": "History",
+        
+        "5": "Entertainment",
+        
+        "6": "Sports"
+        
+    },
+    
+    "success": true
+    
+}
+`
 #### DELETE/<int:question_id>
-##### - General:
+##### - General: delete specefic question
 
 ##### - Sample:
 #### POST/questions
