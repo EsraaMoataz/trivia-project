@@ -249,7 +249,7 @@ This API uses 3 types of error types when requests fail:
     
     "total_questions": 18
     
-   }`
+ }`
 
 #### GET/categories
 ##### - General: Return all categories ,success
@@ -280,24 +280,162 @@ This API uses 3 types of error types when requests fail:
 `
 #### DELETE/<int:question_id>
 ##### - General: delete specefic question based on question id
-
-##### - Sample:
+##### - Sample: `curl http://127.0.0.1:5000/3`
+`
+{
+    "deleted": 10,
+    "success": true
+}
+`
 #### POST/questions
-##### - General:
+##### - General:add new question to the game
+##### - Sample: `curl -X POST -H 'Content_Type:application/json' -d '{"question":"What kind of sports do you like?","answer":"tennis","category":"6","difficulty":"3"}' http://127.0.0.1:5000/questions `
 
-##### - Sample:
+`
+{
+    "answer": "tennis",
+    "category": 6,
+    "difficulty": 3,
+    "question": "What kind of sports do you like?",
+    "success": true
+}
+`
 #### POST/search
-##### - General:
+##### - General:search for specific question with any word or sub word that included in question you searched for.
+##### - Sample:`curl -X POST -H 'Content_Type:application/json' -d '{"searchTerm":"spo"}' http://127.0.0.1:5000/search`
 
-##### - Sample:
+`
+{
+    "current_category": null,
+    "questions": [
+        {
+            "answer": "tennis",
+            "category": 6,
+            "difficulty": 3,
+            "id": 24,
+            "question": "What kind of sports do you like?"
+        },
+        {
+            "answer": "tennis",
+            "category": 6,
+            "difficulty": 2,
+            "id": 25,
+            "question": "Are the basketball is your favourite sport?"
+        },
+        {
+            "answer": "tennis",
+            "category": 6,
+            "difficulty": 3,
+            "id": 29,
+            "question": "What kind of sports do you like?"
+        }
+    ],
+    "success": true,
+    "total_questions": 3
+}
+`
 #### GET/categories/<int:catagory_id>/questions
-##### - General:
+##### - General: Return specefic questions according to category_id
+##### - Sample:`curl http://127.0.0.1:5000/categories/5/questions`
 
-##### - Sample:
-#### GET/quiz/<int:category_id>/<int:question_id>
-##### - General:
+`
+{
+    "category": 2,
+    
+    "questions": [
+    
+        {
+        
+            "answer": "Escher",
+            
+            "category": 2,
+            
+            "difficulty": 1,
+            
+            "id": 16,
+            
+            "question": "Which Dutch graphic artist–initials M C was a creator of optical illusions?"
+            
+        },
+        
+        {
+        
+            "answer": "Mona Lisa",
+            
+            "category": 2,
+            
+            "difficulty": 3,
+            
+            "id": 17,
+            
+            "question": "La Giaconda is better known as what?"
+            
+        },
+        
+        {
+        
+            "answer": "One",
+            
+            "category": 2,
+            
+            "difficulty": 4,
+            
+            "id": 18,
+            
+            "question": "How many paintings did Van Gogh sell in his lifetime?"
+            
+        },
+        
+        {
+        
+            "answer": "Jackson Pollock",
+            
+            "category": 2,
+            
+            "difficulty": 2,
+            
+            "id": 19,
+            
+            "question": "Which American artist was a pioneer of Abstract Expressionism, and a leading exponent of action painting?"
+            
+        }
+        
+    ],
+    
+    "success": true,
+    
+    "total_questions": 4
+}
+`
+#### POST/quiz>
+##### - General: play the quiz 
+##### - Sample:`curl -X POST -H 'Content_Type:application/json' -d '{'previous_questions': [21], 'quiz_category': {'type': 'Science', 'id': '1'}}'  `
 
-##### - Sample:
+`
+{
 
+    "category-id": "1",
+    
+    "question": {
+    
+        "answer": "Blood",
+        
+        "category": 1,
+        
+        "difficulty": 4,
+        
+        "id": 22,
+        
+        "question": "Hematology is a branch of medicine involving the study of what?"
+        
+    },
+    
+    "question-id": 22,
+    
+    "success": true
+    
+}
+`
 ###
 ## Authors
+### Esraa Moataz
