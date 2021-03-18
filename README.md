@@ -84,89 +84,171 @@ This API uses 3 types of error types when requests fail:
 ##### -Sample: `curl http://127.0.0.1:5000/questions`
 
 `{
+
     "categories": {
+    
         "1": "Science",
+        
         "2": "Art",
+        
         "3": "Geography",
+        
         "4": "History",
+        
         "5": "Entertainment",
+        
         "6": "Sports"
+        
     },
+    
     "current_category": null,
+    
     "questions": [
+    
         {
             "answer": "Maya Angelou",
+            
             "category": 4,
+            
             "difficulty": 2,
+            
             "id": 5,
+            
             "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
+            
         },
+        
         {
+        
             "answer": "Brazil",
+            
             "category": 6,
+            
             "difficulty": 3,
+            
             "id": 10,
+            
             "question": "Which is the only team to play in every soccer World Cup tournament?"
+            
         },
+        
         {
             "answer": "George Washington Carver",
+            
             "category": 4,
+            
             "difficulty": 2,
+            
             "id": 12,
+            
             "question": "Who invented Peanut Butter?"
+            
         },
+        
         {
+        
             "answer": "Lake Victoria",
+            
             "category": 3,
+            
             "difficulty": 2,
+            
             "id": 13,
+            
             "question": "What is the largest lake in Africa?"
+            
         },
+        
         {
+        
             "answer": "The Palace of Versailles",
+            
             "category": 3,
+            
             "difficulty": 3,
+            
             "id": 14,
+            
             "question": "In which royal palace would you find the Hall of Mirrors?"
+            
         },
+        
         {
+        
             "answer": "Agra",
+            
             "category": 3,
+            
             "difficulty": 2,
+            
             "id": 15,
+            
             "question": "The Taj Mahal is located in which Indian city?"
+            
         },
+        
         {
+        
             "answer": "Escher",
+            
             "category": 2,
+            
             "difficulty": 1,
+            
             "id": 16,
+            
             "question": "Which Dutch graphic artist–initials M C was a creator of optical illusions?"
+            
         },
+        
         {
+        
             "answer": "Mona Lisa",
+            
             "category": 2,
+            
             "difficulty": 3,
+            
             "id": 17,
+            
             "question": "La Giaconda is better known as what?"
+            
         },
+        
         {
+        
             "answer": "One",
+            
             "category": 2,
+            
             "difficulty": 4,
+            
             "id": 18,
+            
             "question": "How many paintings did Van Gogh sell in his lifetime?"
+            
         },
+        
         {
+        
             "answer": "Jackson Pollock",
+            
             "category": 2,
+            
             "difficulty": 2,
+            
             "id": 19,
+            
             "question": "Which American artist was a pioneer of Abstract Expressionism, and a leading exponent of action painting?"
-        }
+       
+       }
+       
     ],
+    
     "success": true,
+    
     "total_questions": 18
+    
 }`
 
 #### GET/categories
