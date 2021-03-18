@@ -252,8 +252,7 @@ This API uses 3 types of error types when requests fail:
    }`
 
 #### GET/categories
-##### - General:
-###### Return all categories ,success
+##### - General: Return all categories ,success
 ##### - Sample: `curl http://127.0.0.1:5000/categories`
 
 `
@@ -280,7 +279,7 @@ This API uses 3 types of error types when requests fail:
 }
 `
 #### DELETE/<int:question_id>
-##### - General: delete specefic question
+##### - General: delete specefic question based on question id
 
 ##### - Sample:
 #### POST/questions
