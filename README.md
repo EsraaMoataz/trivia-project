@@ -76,9 +76,9 @@ This API uses 3 types of error types when requests fail:
 
 ### EndPoints
 #### GET/questions
-##### - General:
+##### -General:
 
-##### - Sample:
+##### -Sample:
 
 
 #### GET/categories
