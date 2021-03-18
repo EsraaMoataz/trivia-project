@@ -77,8 +77,12 @@ This API uses 3 types of error types when requests fail:
 ### EndPoints
 #### GET/questions
 ##### -General:
+###### Returns all questions,all categories,lengtht of all questions and success.
 
-##### -Sample:
+###### Result are paginated in group of 10.Include a request argument to choose page number ,starting from 1.
+
+
+##### -Sample:.
 
 
 #### GET/categories
