@@ -34,21 +34,21 @@ The ./frontend directory contains a complete React frontend to consume the data 
 
 From the frontend folder run the following commands to start the client:
 
-`npm install //only once to install dependencies
+  `npm install //only once to install dependencies
 
- npm start`
+   npm start`
 
 By default, the frontend run on localhost `http://localhost:3000` 
 ## Testing
 In order to run tests navigate to the backend folder and run the following conmmands:
-`
-dropdb trivia_test
 
-createdb trivia_test
+  `dropdb trivia_test
 
-psql trivia_test < trivia.psql
+   createdb trivia_test
 
-python test_flaskr.py`
+   psql trivia_test < trivia.psql
+
+   python test_flaskr.py`
 
 ## API References
 ### Getting Started
@@ -73,6 +73,15 @@ This API uses 3 types of error types when requests fail:
 - 404: Bad Request
 - 422: Unprocessable
 - 405: Method not allowed
+
+### EndPoints
+#### GET/
+#### GET/categories
+#### DELETE/<int:question_id>
+#### POST/questions
+#### POST/search
+#### GET/categories/<int:catagory_id>/questions
+#### GET/quiz/<int:category_id>/<int:question_id>
 
 ###
 ## Authors
