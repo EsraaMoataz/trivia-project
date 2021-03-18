@@ -434,8 +434,7 @@ This API uses 3 types of error types when requests fail:
     
     "success": true
     
-}
-`
+  }`
 ###
 ## Authors
 ### Esraa Moataz
