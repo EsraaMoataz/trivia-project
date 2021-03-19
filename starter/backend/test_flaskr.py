@@ -34,12 +34,12 @@ class TriviaTestCase(unittest.TestCase):
     Write at least one test for each test for successful operation and for expected errors.
     """
     def test_get_paginated_questions(self):
-        res=self.client().get('/')
+        res=self.client().get('/questions')
         data=json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'],True)
-        self.assertTrue(len(data['Questions']))
+        self.assertTrue(len(data['questions']))
         self.assertTrue(len(data['categories']))
         self.assertTrue(data['total_questions'])
         self.assertEqual(data['current_category'],None)
@@ -48,7 +48,7 @@ class TriviaTestCase(unittest.TestCase):
         
     
     def test_404_requesting_invalid_page(self):
-        res=self.client().get('/?page=1000')
+        res=self.client().get('/questions?page=1000')
         data=json.loads(res.data)
 
         self.assertEqual(res.status_code,404)
@@ -77,12 +77,12 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['message'],'Method Not Allowed')
 
     def test_delete_question(self):
-        res=self.client().delete('/6')
+        res=self.client().delete('/15')
         data=json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'],True)
-        self.assertEqual(data['deleted'],6)
+        self.assertEqual(data['deleted'],15)
         #self.assertTrue(len(data['questions per page']))
         #self.assertTrue(data['no of all questions'])
     
@@ -96,14 +96,14 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data['message'],'Not Found')
 
     def test_get_specefic_questions(self):
-        res=self.client().get('/categories/6/questions')
+        res=self.client().get('/categories/2/questions')
         data=json.loads(res.data)
 
         self.assertEqual(res.status_code,200)
         self.assertEqual(data['success'],True)
         self.assertTrue(len(data['questions']))
         self.assertTrue(data['total_questions'])
-        self.assertEqual(data['category'],6)
+        self.assertEqual(data['category'],2)
 
 
     def test_get_specefic_questions_with_wrong_method(self):
@@ -117,7 +117,7 @@ class TriviaTestCase(unittest.TestCase):
 
 
     def test_search_specific_question(self):
-        res=self.client().post('/search?search_term=who')
+        res=self.client().post('/search', json={"searchTerm":"who"})
         data=json.loads(res.data)
 
         self.assertEqual(res.status_code,200)
@@ -128,7 +128,7 @@ class TriviaTestCase(unittest.TestCase):
 
 
     def test_search_specefic_questions_with_wrong_method(self):
-        res=self.client().get('/search?search_term=who')
+        res=self.client().get('/search')
         data=json.loads(res.data)
 
         self.assertEqual(res.status_code, 405)
