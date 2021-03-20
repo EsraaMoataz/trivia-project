@@ -3,18 +3,35 @@ from sqlalchemy import Column, String, Integer, create_engine
 from flask_sqlalchemy import SQLAlchemy
 import json
 
-database_name = "Trivia"
-database_path = "postgres://postgres:2141997esraa@{}/{}".format('localhost:5432', database_name)
+#from decouple import config
+# to retrieve varaiables from .env file
+'''DB_USER=os.getenv("DB_USER", "postgres")
+DB_PASSWORD=os.getenv("DB_PASSWORD", "2141997esraa")
+DB_HOST=os.getenv("DB_HOST", "localhost:5432")   
+DB_NAME=os.getenv("DB_NAME", "Trivia")  '''
 
+#to retrieve variables from user variables on my windows
+'''DB_USER=os.environ.get("DB_USER")
+DB_PASSWORD=os.environ.get("DB_PASSWORD")
+DB_HOST=os.environ.get("DB_HOST")
+DB_NAME=os.environ.get("DB_NAME")
+database_path='postgresql://{}:{}@{}/{}'.format(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)'''
+
+
+##database_name = "Trivia"
+##database_path = "postgres://postgres:2141997esraa@{}/{}".format('localhost:5432', database_name)
+'''database_name=config('DB_NAME')
+database_path=config('DB_PATH')'''
 db = SQLAlchemy()
 
 '''
 setup_db(app)
     binds a flask application and a SQLAlchemy service
 '''
-def setup_db(app, database_path=database_path):
-    app.config["SQLALCHEMY_DATABASE_URI"] = database_path
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+def setup_db(app):#, database_path=database_path):
+    #app.config["SQLALCHEMY_DATABASE_URI"] = database_path
+    #app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config.from_object('config')
     db.app = app
     db.init_app(app)
     db.create_all()
