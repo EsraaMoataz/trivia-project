@@ -4,6 +4,7 @@ venv
 .env
 node_modules
 env
+config.py
 
 # OS generated files #
 ######################
