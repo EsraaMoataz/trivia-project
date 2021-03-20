@@ -232,7 +232,7 @@ def create_app(test_config=None):
                 abort(400)
 
             if category['type'] == 'click':
-                questions_per_said_category = Question.queryfilter(
+                questions_per_said_category = Question.query.filter(
                   Question.id.notin_((previous_questions_ids))).all()
             else:
                 questions_per_said_category = Question.query.filter(
@@ -240,6 +240,12 @@ def create_app(test_config=None):
                     Question.id.notin_((previous_questions_ids))).all()
 
             total = len(questions_per_said_category)
+
+            if (len(questions_per_said_category) == 0):
+                    return jsonify({
+                            'success': True,
+                            'question': False,
+                    })
 
             current_question = questions_per_said_category[random.randrange(
                 0, len(questions_per_said_category))].format() if len(
